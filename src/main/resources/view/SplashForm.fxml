@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: rgba(0,0,0,0);" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.SplashFormController">
+   <children>
+      <ImageView fitHeight="59.0" fitWidth="244.0" layoutX="64.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/new-logo.c0df6a3a377bc58f49cc.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="64.0" layoutY="140.0" text="National Fuel Pass" textFill="#a60a0a">
+         <font>
+            <Font name="Montserrat ExtraBold" size="48.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="59.0" fitWidth="69.0" layoutX="418.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/ceypetco.6fba6749ad0f0a42d308.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="71.0" fitWidth="70.0" layoutX="501.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/ioc.4f08ec6c24902301ba07.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="212.0" layoutY="233.0" text="Welcome to National Fuel Pass App..">
+         <font>
+            <Font name="Montserrat SemiBold" size="13.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblLoading" alignment="CENTER" layoutX="211.0" layoutY="266.0" prefHeight="15.0" prefWidth="261.0" text="Loading..">
+         <font>
+            <Font name="Montserrat SemiBold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="-1.0" layoutY="371.0" prefHeight="28.0" prefWidth="600.0" style="-fx-background-color: yellow;" wrapText="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <font>
+            <Font name="Montserrat SemiBold" size="13.0" />
+         </font></Label>
+      <ImageView fitHeight="79.0" fitWidth="117.0" layoutX="53.0" layoutY="219.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/b99e31bc71d0b14e7c6a8bdfadc1ccfe.gif" />
+         </image>
+      </ImageView>
+      <Label layoutX="307.0" layoutY="202.0" text="v1.0.0" textFill="#a80909">
+         <font>
+            <Font name="Montserrat SemiBold" size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="201.0" layoutY="381.0" text="Copyright © 2022. All Right Reserved.">
+         <font>
+            <Font name="Montserrat SemiBold" size="13.0" />
+         </font>
+      </Label>
+      <ProgressBar layoutX="234.0" layoutY="298.0" prefWidth="200.0" progress="0.0" style="-fx-background-color: green;" />
+      <ProgressBar layoutX="234.0" layoutY="298.0" prefHeight="20.0" prefWidth="25.0" progress="0.0" style="-fx-background-color: green;" />
+   </children>
+</AnchorPane>
