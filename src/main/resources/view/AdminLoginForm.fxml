@@ -10,7 +10,7 @@
 
 <AnchorPane fx:id="pnaAdminLoginForm" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AdminLoginFormController">
    <children>
-      <Label alignment="CENTER" layoutY="56.0" text="Admin Login Form" textFill="#a81111" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+      <Label alignment="CENTER" layoutY="56.0" text="Admin Login Form" textFill="#680303" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
          <font>
             <Font name="Montserrat ExtraBold" size="42.0" />
          </font>

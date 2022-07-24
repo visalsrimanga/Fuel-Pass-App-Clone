@@ -43,7 +43,7 @@ public class AdminLoginFormController {
             MediaPlayer mediaPlayer = new MediaPlayer(media);
             mediaPlayer.play();
 
-            Alert alert = new Alert(Alert.AlertType.ERROR, "Wrong password."+attempt+" You have attempt to try again");
+            Alert alert = new Alert(Alert.AlertType.ERROR, "Wrong password. You have "+attempt+" more attempt to try again");
 //            attempt--;
 
             InputStream resourceStream=this.getClass().getResourceAsStream("/images/login.png");
