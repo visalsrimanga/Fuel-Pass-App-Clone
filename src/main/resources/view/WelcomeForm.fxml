@@ -31,7 +31,7 @@
       </FlowPane>
       <Label alignment="CENTER" layoutY="14.0" text="NATIONAL FUEL PASS" textFill="#830909" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
          <font>
-            <Font name="Montserrat ExtraBold" size="40.0" />
+            <Font name="Montserrat ExtraBold" size="35.0" />
          </font>
       </Label>
    </children>

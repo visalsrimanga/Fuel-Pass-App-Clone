@@ -1,10 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane fx:id="pneControlCenter" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ControlCenterFormController">
+<AnchorPane fx:id="pnaControlCenter" prefHeight="395.0" prefWidth="578.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ControlCenterFormController">
    <children>
-      <Button layoutX="81.0" layoutY="25.0" mnemonicParsing="false" text="Button" />
+      <TableView fx:id="tblUsers" layoutX="20.0" layoutY="66.0" prefHeight="245.0" prefWidth="548.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="10.0">
+        <columns>
+          <TableColumn fx:id="colNIC" prefWidth="131.0" text="NIC" />
+          <TableColumn fx:id="colFirstName" prefWidth="97.0" text="First Name" />
+            <TableColumn fx:id="colLastName" prefWidth="102.0" text="Last Name" />
+            <TableColumn fx:id="colAddress" prefWidth="127.0" text="Address" />
+            <TableColumn fx:id="colOption" prefWidth="90.0" text="Option" />
+        </columns>
+      </TableView>
    </children>
 </AnchorPane>

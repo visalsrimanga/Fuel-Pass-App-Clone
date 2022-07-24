@@ -1,5 +1,6 @@
 package controller;
 
+import com.sun.media.jfxmedia.track.AudioTrack;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
@@ -8,20 +9,23 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.PasswordField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.media.AudioClip;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 
-import javax.print.attribute.standard.Media;
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
 
 public class AdminLoginFormController {
-    public AnchorPane pnaAdminForm;
+    public AnchorPane pnaAdminLoginForm;
 
     public PasswordField txtPassword;
 
-    private static final String ADMIN_PASSWORD="dep9@admin";
+    private static final String ADMIN_PASSWORD="dep9";
     private static int attempt=3;
 
     public void txtPasswordOnAction(ActionEvent actionEvent) throws IOException {
@@ -34,13 +38,10 @@ public class AdminLoginFormController {
 
             attempt--;
 
-            URL resorce= this.getClass().getResource("/audio/securityalarm.mp3");
-//            Media media = new Media(resorce.toString());
-//            MediaPlayer mediaPlayer = new MediaPlayer(media);
-//            mediaPlayer.play();
-
-            //add web dependency to work this
-
+            URL resorce= getClass().getResource("/audio/Security-breach.mp3");
+            Media media = new Media(resorce.toString());
+            MediaPlayer mediaPlayer = new MediaPlayer(media);
+            mediaPlayer.play();
 
             Alert alert = new Alert(Alert.AlertType.ERROR, "Wrong password."+attempt+" You have attempt to try again");
 //            attempt--;
@@ -63,14 +64,13 @@ public class AdminLoginFormController {
         }
 
         AnchorPane container=FXMLLoader.load(this.getClass().getResource("/view/ControlCenterForm.fxml"));
-        AnchorPane pneContainer = (AnchorPane) pnaAdminForm.getParent();
+        AnchorPane pneContainer = (AnchorPane) pnaAdminLoginForm.getParent();
         pneContainer.getChildren().clear();
         pneContainer.getChildren().add(container);
-        AnchorPane.setLeftAnchor(pneContainer,0.0);
-        AnchorPane.setRightAnchor(pneContainer,0.0);
-        AnchorPane.setTopAnchor(pneContainer,0.0);
-        AnchorPane.setBottomAnchor(pneContainer,0.0);
-
+        AnchorPane.setLeftAnchor(container,0.0);
+        AnchorPane.setRightAnchor(container,0.0);
+        AnchorPane.setTopAnchor(container,0.0);
+        AnchorPane.setBottomAnchor(container,0.0);
 
     }
 }

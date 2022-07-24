@@ -1,11 +1,102 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.TextFlow?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.RegisterFormController">
+<AnchorPane fx:id="pnaRegistration" prefHeight="355.0" prefWidth="600.0" stylesheets="@../CSS/register-form.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.RegisterFormController">
    <children>
-      <Button layoutX="99.0" layoutY="92.0" mnemonicParsing="false" text="Button" />
+      <Button fx:id="btnRegister" defaultButton="true" disable="true" layoutX="28.0" layoutY="286.0" mnemonicParsing="false" onAction="#btnRegisterOnAction" prefHeight="38.0" prefWidth="109.0" text="Register" textFill="WHITE" AnchorPane.leftAnchor="28.0">
+         <font>
+            <Font name="Montserrat ExtraBold" size="13.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Label alignment="CENTER" focusTraversable="false" layoutX="25.0" text="REGISTRATION" textFill="#680303" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="25.0">
+         <font>
+            <Font name="Montserrat ExtraBold" size="35.0" />
+         </font>
+      </Label>
+      <AnchorPane layoutX="27.0" layoutY="84.0" prefHeight="5.0" prefWidth="540.0" style="-fx-background-color: green;" AnchorPane.leftAnchor="27.0" AnchorPane.rightAnchor="33.0" />
+      <HBox alignment="CENTER" layoutX="24.0" layoutY="43.0" AnchorPane.leftAnchor="24.0" AnchorPane.rightAnchor="26.0">
+         <children>
+            <Label focusTraversable="false" prefHeight="18.0" prefWidth="186.0" text="Already have an account?">
+               <font>
+                  <Font name="Montserrat SemiBold" size="13.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblLoginHere" focusTraversable="true" onMouseClicked="#lblLoginHereOnMouseClicked" text="Login Here">
+               <font>
+                  <Font name="Montserrat ExtraBold" size="13.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Label>
+         </children>
+      </HBox>
+      <Label focusTraversable="false" layoutX="28.0" layoutY="60.0" prefHeight="18.0" prefWidth="109.0" text="Personal Details" textFill="#127512" AnchorPane.bottomAnchor="360.0" AnchorPane.leftAnchor="28.0" AnchorPane.topAnchor="60.0">
+         <font>
+            <Font name="Montserrat SemiBold" size="13.0" />
+         </font>
+      </Label>
+      <VBox layoutX="28.0" layoutY="95.0" spacing="5.0" AnchorPane.leftAnchor="28.0" AnchorPane.rightAnchor="122.0">
+         <children>
+            <TextFlow>
+               <children>
+                  <Label focusTraversable="false" text="NIC Number" />
+                  <Label fx:id="lblStarNicNumber" focusTraversable="false" text=" *" textFill="RED" />
+               </children>
+            </TextFlow>
+            <TextField fx:id="txtNIC" prefHeight="26.0" prefWidth="339.0" promptText="Ex : 940192897V" />
+         </children>
+      </VBox>
+      <ComboBox layoutX="496.0" layoutY="118.0" prefHeight="26.0" prefWidth="77.0" promptText="NIC" AnchorPane.rightAnchor="27.0" />
+      <HBox layoutX="28.0" layoutY="159.0" nodeOrientation="LEFT_TO_RIGHT" spacing="10.0" AnchorPane.leftAnchor="28.0" AnchorPane.rightAnchor="32.0">
+         <children>
+            <VBox spacing="5.0" HBox.hgrow="ALWAYS">
+               <children>
+                  <TextFlow>
+                     <children>
+                        <Label focusTraversable="false" text="First Name" />
+                        <Label fx:id="lblStarFirstName" focusTraversable="false" text=" *" textFill="RED" />
+                     </children>
+                  </TextFlow>
+                  <TextField fx:id="txtFirstName" disable="true" prefHeight="26.0" prefWidth="272.0" promptText="Ex : Visal" AnchorPane.leftAnchor="30.0" />
+               </children>
+            </VBox>
+            <VBox spacing="5.0" HBox.hgrow="ALWAYS">
+               <children>
+                  <Label focusTraversable="false" text="Last Name :" />
+                  <TextField fx:id="txtLastName" disable="true" prefHeight="26.0" prefWidth="265.0" promptText="Ex : Srimanga" AnchorPane.rightAnchor="30.0" />
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+      <VBox layoutX="28.0" layoutY="223.0" spacing="5.0" AnchorPane.leftAnchor="28.0" AnchorPane.rightAnchor="32.0">
+         <children>
+            <TextFlow>
+               <children>
+                  <Label focusTraversable="false" text="Address" />
+                  <Label fx:id="lblStarAddress" focusTraversable="false" text=" *" textFill="RED" />
+               </children>
+            </TextFlow>
+            <TextField fx:id="txtAddress" disable="true" prefHeight="26.0" prefWidth="505.0" promptText="Ex : No. 354/2, New Galle Road, Panadura" />
+         </children>
+      </VBox>
+      <Label fx:id="lblNicErrorMessage" layoutX="28.0" layoutY="144.0" prefHeight="18.0" prefWidth="269.0" text="Please Enter a Valid NIC number to proceed." textFill="#208ae1">
+         <font>
+            <Font size="10.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
