@@ -10,6 +10,12 @@ public class InMemoryDb {
         return userDatabase;
     }
 
+    public static boolean isRegisteredUser(String nic){
+        for (User user:userDatabase){
+            if (user.getNic().equalsIgnoreCase(nic)) return true;
+        }
+        return false;
+    }
     public static User findUser(String nic){
         for (User user:userDatabase){
             if (user.getNic().equalsIgnoreCase(nic)) {

@@ -1,0 +1,5 @@
+package util;
+
+public enum Route {
+    WELCOME, REGISTRATION, LOGIN, ADMIN_LOGIN, CONTROL_CENTER, USER_DASHBOARD
+}

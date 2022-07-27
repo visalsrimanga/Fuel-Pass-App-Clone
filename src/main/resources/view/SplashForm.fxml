@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ProgressBar?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: rgba(0,0,0,0);" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.SplashFormController">
    <children>
-      <ImageView fitHeight="59.0" fitWidth="244.0" layoutX="64.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="50.0" fitWidth="231.0" layoutX="64.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/new-logo.c0df6a3a377bc58f49cc.png" />
          </image>
@@ -58,7 +58,7 @@
             <Font name="Montserrat SemiBold" size="13.0" />
          </font>
       </Label>
-      <ProgressBar layoutX="234.0" layoutY="298.0" prefWidth="200.0" progress="0.0" style="-fx-background-color: green;" />
-      <ProgressBar layoutX="234.0" layoutY="298.0" prefHeight="20.0" prefWidth="25.0" progress="0.0" style="-fx-background-color: green;" />
+      <Rectangle fx:id="progressTotal" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="8.0" layoutX="212.0" layoutY="298.0" stroke="BLACK" strokeType="INSIDE" width="247.0" />
+      <Rectangle fx:id="progressRunning" arcHeight="5.0" arcWidth="5.0" fill="#43bf16" height="8.0" layoutX="212.0" layoutY="298.0" stroke="BLACK" strokeType="INSIDE" width="29.0" />
    </children>
 </AnchorPane>

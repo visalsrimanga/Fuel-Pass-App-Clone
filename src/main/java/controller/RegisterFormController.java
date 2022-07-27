@@ -15,6 +15,8 @@ import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.Color;
+import util.Navigations;
+import util.Route;
 
 import java.io.IOException;
 
@@ -31,7 +33,7 @@ public class RegisterFormController {
     public Label lblStarFirstName;
     public Label lblStarAddress;
 
-    private boolean isValidNIC(String input) {
+    public static boolean isValidNIC(String input) {
         if (input.length() != 10) return false;
         if (!(input.endsWith("v") || input.endsWith("V"))) return false;
         if (!input.substring(0, 9).matches("\\d+")) return false;
@@ -49,16 +51,42 @@ public class RegisterFormController {
             btnRegister.setDisable(false);
         }
     }
+    public boolean isName(String input){
+        char[] chars=input.toCharArray();
+        for (char aLetter:chars){
+            if (!Character.isLetter(aLetter) && aLetter != ' ') return false;
+        }
+        return true;
+    }
 
-    public void btnRegisterOnAction(ActionEvent actionEvent) {
+    public void btnRegisterOnAction(ActionEvent actionEvent) throws IOException {
+        if (!isName(txtFirstName.getText())) {
+            txtFirstName.requestFocus();
+            txtFirstName.selectAll();
+            new Alert(Alert.AlertType.INFORMATION,"Invalid Name!").showAndWait();
+            return;
+        } else if (!txtLastName.getText().isBlank() && !isName(txtLastName.getText())) {
+            txtLastName.requestFocus();
+            txtLastName.selectAll();
+            new Alert(Alert.AlertType.INFORMATION,"Invalid Name!").showAndWait();
+            return;
+        } else if (InMemoryDb.isRegisteredUser(txtNIC.getText())) {
+            txtNIC.requestFocus();
+            txtNIC.selectAll();
+            new Alert(Alert.AlertType.INFORMATION,"Already registered user, Please check your NIC and try again!").showAndWait();
+            return;
+        }
+
         InMemoryDb.registerUser(new User(txtNIC.getText(), txtFirstName.getText(),
                 txtLastName.getText(), txtAddress.getText(), new Button("Remove")));
         txtNIC.clear();
         txtFirstName.clear();
         txtLastName.clear();
         txtAddress.clear();
-        new Alert(Alert.AlertType.INFORMATION,"Registration Successful! ✅").showAndWait();
-//        System.out.println(InMemoryDb.getUserDatabase());
+        new Alert(Alert.AlertType.INFORMATION,"Registration Successful! ✅ You will direct to the login screen!").showAndWait();
+
+        Navigations.navigate(Route.LOGIN);
+
     }
 
     public void lblLoginHereOnMouseClicked(MouseEvent mouseEvent) throws IOException {

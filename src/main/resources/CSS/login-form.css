@@ -1,0 +1,14 @@
+#btnLogin{
+    -fx-background-color: rgb(32, 138, 225);
+}
+#btnLogin:hover, #btnLogin:focused{
+    -fx-background-color: rgb(32, 138, 225,0.8);
+}
+
+#lblRegisterHere{
+    -fx-text-fill: rgb(32, 138, 225);
+}
+
+#lblRegisterHere:hover, #lblRegisterHere:focused{
+    -fx-text-fill: rgba(32, 138, 225,0.8);
+}

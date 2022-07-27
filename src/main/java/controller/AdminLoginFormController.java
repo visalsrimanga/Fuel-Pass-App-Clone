@@ -13,6 +13,8 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.media.AudioClip;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
+import util.Navigations;
+import util.Route;
 
 import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;
@@ -63,14 +65,7 @@ public class AdminLoginFormController {
             return;
         }
 
-        AnchorPane container=FXMLLoader.load(this.getClass().getResource("/view/ControlCenterForm.fxml"));
-        AnchorPane pneContainer = (AnchorPane) pnaAdminLoginForm.getParent();
-        pneContainer.getChildren().clear();
-        pneContainer.getChildren().add(container);
-        AnchorPane.setLeftAnchor(container,0.0);
-        AnchorPane.setRightAnchor(container,0.0);
-        AnchorPane.setTopAnchor(container,0.0);
-        AnchorPane.setBottomAnchor(container,0.0);
+        Navigations.navigate(Route.CONTROL_CENTER);
 
     }
 }
