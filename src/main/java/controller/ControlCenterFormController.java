@@ -71,6 +71,7 @@ public class ControlCenterFormController {
         colLastName.setCellValueFactory(new PropertyValueFactory<>("lastName"));
         colAddress.setCellValueFactory(new PropertyValueFactory<>("address"));
         colOption.setCellValueFactory(new PropertyValueFactory<>("btnRemove"));
+
     }
 
     public void btnSearchOnAction(ActionEvent actionEvent) {
