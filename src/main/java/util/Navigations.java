@@ -11,10 +11,11 @@ public class Navigations {
     private static AnchorPane pneContainer;
 
     public static void init(AnchorPane pneContainer){
+
         Navigations.pneContainer=pneContainer;
     }
 
-    public static void navigate(Route route) throws IOException {
+    public static Object navigate(Route route) throws IOException {
         pneContainer.getChildren().clear();
         URL resource;
         switch (route){
@@ -36,11 +37,17 @@ public class Navigations {
             default:
                 resource=Navigations.class.getResource("/view/ControlCenterForm.fxml");
         }
-        Parent container = FXMLLoader.load(resource);
+//        Parent container = FXMLLoader.load(resource);
+
+        FXMLLoader fxmlLoader = new FXMLLoader(resource);
+        Parent container = fxmlLoader.load();
+
         pneContainer.getChildren().add(container);
         AnchorPane.setLeftAnchor(container,0.0);
         AnchorPane.setRightAnchor(container,0.0);
         AnchorPane.setTopAnchor(container,0.0);
         AnchorPane.setBottomAnchor(container,0.0);
+
+        return fxmlLoader.getController();
     }
 }

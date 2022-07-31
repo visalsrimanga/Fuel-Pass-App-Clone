@@ -10,16 +10,26 @@ public class User implements Serializable {
     private String firstName;
     private String lastName;
     private String address;
+    private double quota;
     private Button btnRemove;
+
+    public double getQuota() {
+        return quota;
+    }
+
+    public void setQuota(int quota) {
+        this.quota = quota;
+    }
 
     public User() {
     }
 
-    public User(String nic, String firstName, String lastName, String address, Button btnRemove) {
+    public User(String nic, String firstName, String lastName, String address, int quota, Button btnRemove) {
         this.nic = nic;
         this.firstName = firstName;
         this.lastName = lastName;
         this.address = address;
+        this.quota = quota;
         this.btnRemove = btnRemove;
     }
 

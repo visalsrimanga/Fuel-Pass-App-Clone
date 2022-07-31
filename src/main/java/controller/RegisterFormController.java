@@ -78,7 +78,7 @@ public class RegisterFormController {
         }
 
         InMemoryDb.registerUser(new User(txtNIC.getText(), txtFirstName.getText(),
-                txtLastName.getText(), txtAddress.getText(), new Button("Remove")));
+                txtLastName.getText(), txtAddress.getText(), 20, new Button("Remove")));
         txtNIC.clear();
         txtFirstName.clear();
         txtLastName.clear();

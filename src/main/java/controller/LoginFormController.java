@@ -1,6 +1,8 @@
 package controller;
 
+import com.google.zxing.WriterException;
 import db.InMemoryDb;
+import db.User;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -22,8 +24,9 @@ public class LoginFormController {
     public TextField txtLoginNIC;
     public Label lblRegisterHere;
     public AnchorPane pnaLoginForm;
+    public User user;
 
-    public void btnLoginOnAction(ActionEvent actionEvent) throws IOException {
+    public void btnLoginOnAction(ActionEvent actionEvent) throws IOException, WriterException {
         String nic = txtLoginNIC.getText();
         if (!RegisterFormController.isValidNIC(nic)) {
             txtLoginNIC.requestFocus();
@@ -36,8 +39,9 @@ public class LoginFormController {
             new Alert(Alert.AlertType.INFORMATION, "Unregistered NIC, Please register first!").showAndWait();
             return;
         }
-
-        Navigations.navigate(Route.USER_DASHBOARD);
+        user=InMemoryDb.findUser(nic);
+        UserDashBoardController userDashBoardController = (UserDashBoardController) Navigations.navigate(Route.USER_DASHBOARD);
+        userDashBoardController.setData(user);
     }
     public void lblRegisterHereSetOnAction(MouseEvent mouseEvent) throws IOException {
         Navigations.navigate(Route.REGISTRATION);
