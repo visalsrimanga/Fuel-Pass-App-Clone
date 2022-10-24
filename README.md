@@ -10,6 +10,7 @@ pass app.
 In this app, JavaFX was used for all user interfaces and Java was used to develop back-end logic.
 * Java
 * JavaFX
+* Maven
 
 ### Welcome Page
 The first user interface of the app is the below image and the navigation of the app is described below. 
@@ -29,8 +30,8 @@ On this page, it will be checked the login credentials given by the admin and wi
 for invalid login credentials. <br>
 
 ![plot](./src/main/resources/images/adminlogin.png)
-### version
+### Version
 v1.0.0
-### Licence
+### License
 Copyright &copy; 2022 Visal Srimanga. All Right Reserved.<br>
 This project is licensed under the [MIT License](LICENSE.txt)
