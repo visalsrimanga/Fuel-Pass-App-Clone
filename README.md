@@ -1,22 +1,22 @@
 # National Fuel Pass App Clone
 This is a desktop application and it is a clone version of the
-existing [National Fuel Pass](https://fuelpass.gov.lk) web application. In that application
-there are separate logins for both admin and other users where,
-admin has the privileges to change the weekly quota of fuel and
+existing [National Fuel Pass](https://fuelpass.gov.lk) web application. In that application,
+there are separate logins for both the admin and other users where
+the admin has the privileges to change the weekly quota of fuel and
 user removal. Normal users can register and then login to the fuel
 pass app.
 
-###Languages & Tools
-In this app, JavaFX was used for all user interfaces and Java was used for developed back-end logic.
-    * Java
-    * JavaFX
+### Languages & Tools
+In this app, JavaFX was used for all user interfaces and Java was used to develop back-end logic.
+* Java
+* JavaFX
 
 ### Welcome Page
-First user interface of the app as below image and navigation of the app as descriped below. 
+The first user interface of the app is the below image and the navigation of the app is described below. 
 - *Registration form by clicking "Register Button"*
 - *Login form by clicking "Login Button"*
-- *Admin Login by clicking "Icon" which is in Top-right corner*
-- *Welcome form from anywhere of the app by clicking "Icon" which is Top-left corner* <br>
+- *Admin Login by clicking "Icon" which is in the top-right corner*
+- *Welcome form from anywhere in the app by clicking "Icon" which is Top-left corner* <br>
 
 ![plot](./src/main/resources/images/welcomepage.png)
 
@@ -25,8 +25,8 @@ First user interface of the app as below image and navigation of the app as desc
 ![plot](./src/main/resources/images/registration.png)
 
 ### Admin Login Form
-In this page, it will be checked the login creadentials given by admin and will return a customized JavaFX error message
-for invalid login creadentials. <br>
+On this page, it will be checked the login credentials given by the admin and will return a customized JavaFX error message
+for invalid login credentials. <br>
 
 ![plot](./src/main/resources/images/adminlogin.png)
 ### version
